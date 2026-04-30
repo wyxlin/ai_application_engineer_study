@@ -2,7 +2,7 @@
 
 **Platform:** DeepLearning.AI
 **API Used:** OpenAI Responses API (modern)
-**Status:** In progress
+**Status:** Completed
 
 ---
 
@@ -13,8 +13,8 @@
 - [x] Lesson 3: Moderation
 - [x] Lesson 4: Chain of Thought
 - [x] Lesson 5: Chaining Prompts
-- [ ] Lesson 6: Check Outputs
-- [ ] Lesson 7: Evaluation
+- [x] Lesson 6: Check Outputs
+- [x] Lesson 7: Evaluation
 
 ---
 
@@ -255,3 +255,109 @@ user input
 ```
 
 This is the skeleton of the job-search assistant.
+
+---
+
+## Lesson 6: Check Outputs
+
+Mirror of Moderation — checks the model's output before sending it to the user.
+
+### Safety check (free)
+
+```python
+def is_output_safe(model_response: str) -> bool:
+    result = client.moderations.create(
+        model="omni-moderation-latest",
+        input=model_response
+    )
+    return not result.results[0].flagged
+```
+
+### Quality check (costs tokens — use sparingly)
+
+```python
+def is_output_relevant(user_message: str, model_response: str) -> bool:
+    check = client.responses.create(
+        model="gpt-4o",
+        instructions="""
+        Does the response appropriately answer the user's message?
+        Return JSON only: {"is_good": true/false, "reason": "..."}
+        """,
+        input=f"User message: {user_message}\n\nResponse: {model_response}"
+    )
+    result = json.loads(check.output_text)
+    return result["is_good"]
+```
+
+### Rules
+
+- Always run the moderation safety check on output — it's free
+- Only run the quality check on the **final response** before it reaches the user, not on every intermediate step
+- If output fails either check, return a fallback message instead
+
+### Updated full pipeline
+
+```
+user input
+    ↓
+[input moderation]    — is input safe?
+    ↓
+[classification]      — what does the user want?
+    ↓
+[chain steps]         — structured JSON between steps
+    ↓
+[output moderation]   — is output safe?
+    ↓
+[quality check]       — is output relevant? (final step only)
+    ↓
+user
+```
+
+---
+
+## Lesson 7: Evaluation
+
+Systematically measuring how well your system performs — so you can catch regressions, compare prompt versions, and know your accuracy before an interview demo.
+
+### Basic eval pattern
+
+```python
+test_cases = [
+    {"input": "Find me a backend job in Seattle", "expected_category": "job_search"},
+    {"input": "How can I improve my resume?",     "expected_category": "resume_help"},
+    {"input": "What to say about my weakness?",   "expected_category": "interview_prep"},
+]
+
+def evaluate_classifier(test_cases: list) -> dict:
+    correct = 0
+    for case in test_cases:
+        result = classify_user_input(case["input"])
+        if result["category"] == case["expected_category"]:
+            correct += 1
+    return {"accuracy": correct / len(test_cases), "total": len(test_cases)}
+```
+
+### Two levels of evaluation
+
+| Level | What it checks | Use case |
+|---|---|---|
+| **Exact match** | Output matches expected value exactly | Classification, scores |
+| **LLM-graded** | Ask a model to judge quality | Natural language outputs |
+
+### LLM-graded eval
+
+```python
+def grade_response(user_input: str, system_response: str, criteria: str) -> dict:
+    result = client.responses.create(
+        model="gpt-4o",
+        instructions=f"Grade this response based on: {criteria}. Return JSON: {{\"score\": 1-5, \"reason\": \"...\"}}",
+        input=f"User: {user_input}\nResponse: {system_response}"
+    )
+    return json.loads(result.output_text)
+```
+
+### Key rules
+
+- Start collecting eval cases now — every manual test is a potential test case
+- Before deploying a new prompt version, run your full eval set to catch regressions
+- Target: 20–30 eval cases by Week 8 of the roadmap
