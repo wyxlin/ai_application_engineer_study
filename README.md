@@ -5,23 +5,28 @@ Personal learning repo for transitioning into AI Application Engineering.
 ## Structure
 
 ```
-├── roadmap.md          # 16-week study roadmap (modified from original)
-├── daily_notes/        # Daily learning summaries and notes
-│   └── YYYY-MM-DD.md
-└── projects/           # Hands-on project code built along the roadmap
+├── roadmap.md              # 16-week study roadmap
+├── daily_notes/            # Learning journal — one file per day
+│   └── YYYY-MM-DD.md       # What I studied, what clicked, what was unclear
+├── notes/                  # Course summaries — clean reference by course
+│   └── course_name.md      # Reusable knowledge, easy to recap later
+└── projects/               # Hands-on project code built along the roadmap
 ```
 
-## How to use
+## Two types of notes
 
-- Follow `roadmap.md` week by week
-- After each study session, add a note in `daily_notes/` using the template below
-- Build projects incrementally inside `projects/`
+| | Daily Notes | Course Notes |
+|---|---|---|
+| Purpose | Learning journal | Knowledge reference |
+| Structure | By date | By course/topic |
+| Content | Progress, confusion, breakthroughs | Clean summaries, code patterns |
+| Audience | Yourself | Anyone |
 
 ## Daily Note Template
 
 ```markdown
 ## Date: YYYY-MM-DD
-## Week / Topic:
+## Course / Topic:
 
 ### What I studied
 
