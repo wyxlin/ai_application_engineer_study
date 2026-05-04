@@ -11,8 +11,8 @@
 - [x] Models
 - [x] Output Parsers
 - [x] Chains
-- [ ] Retry and Error Handling
-- [ ] LangSmith (Logging and Tracing)
+- [x] Retry and Error Handling
+- [x] LangSmith (Logging and Tracing)
 
 ---
 
@@ -136,6 +136,47 @@ def evaluate_pipeline(job_description: str, resume: str) -> FitEvaluation:
     })
     return result
 ```
+
+---
+
+## Retry and Error Handling
+
+```python
+llm = ChatOpenAI(model="gpt-4o", temperature=0)
+fallback_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+
+robust_chain = (
+    prompt
+    | llm.with_retry(stop_after_attempt=3)
+         .with_structured_output(FitEvaluation)
+         .with_fallbacks([
+             fallback_llm.with_structured_output(FitEvaluation)
+         ])
+)
+```
+
+| Error type | Solution |
+|---|---|
+| API errors (rate limit, timeout) | `.with_retry()` |
+| Output errors (bad data) | `.with_fallbacks()` |
+
+---
+
+## LangSmith — Observability
+
+Add to `.env` — no code changes needed:
+```
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_API_KEY=your_key
+LANGCHAIN_PROJECT=job-search-assistant
+```
+
+LangSmith records for every chain run:
+- Full formatted prompt sent to the model
+- Model used, latency, token count, cost
+- Input and output at each step
+
+Use it to debug which step in a multi-chain pipeline produced wrong output.
 
 ---
 
