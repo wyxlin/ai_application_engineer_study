@@ -1,0 +1,72 @@
+[
+  {
+    "id": "tc_001",
+    "user_input": "Please evaluate whether this resume matches the backend role.",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "Backend Engineer at Stripe. Requirements: 3+ years Python or Go, distributed systems, REST APIs, PostgreSQL. Location: Seattle or Remote US.",
+    "resume": "Lin He. Skills: Python, Go, REST APIs, PostgreSQL, distributed systems. Experience: 3 years backend services."
+  },
+  {
+    "id": "tc_002",
+    "user_input": "Can you score the fit for this AI application engineer job?",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "AI Application Engineer. Requirements: Python, prompt engineering, OpenAI API, backend integration, SQL. Entry-level welcome.",
+    "resume": "Mia Chen. Skills: Python, OpenAI API, SQL, FastAPI. Projects: Prompt-based tutor app, RAG chatbot."
+  },
+  {
+    "id": "tc_003",
+    "user_input": "Evaluate this candidate for a frontend role.",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "Frontend Engineer. Requirements: React, TypeScript, Next.js, Jest, GraphQL.",
+    "resume": "John Doe. Skills: Python, Java, gRPC, distributed systems, SQL."
+  },
+  {
+    "id": "tc_004",
+    "user_input": "I need a job-fit analysis for this JD and resume.",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "Data Engineer. Requirements: Python, Airflow, Spark, ETL, AWS.",
+    "resume": "Sara Park. Skills: Python, ETL pipelines, Airflow, AWS, SQL. Experience: 2 years data platform."
+  },
+  {
+    "id": "tc_005",
+    "user_input": "Check if this person should apply now.",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "New Grad Backend Engineer. Requirements: Java or Python, APIs, SQL. Location: Bellevue.",
+    "resume": "Alex Kim. Skills: Java, Python, SQL, REST APIs. Education: MSCS."
+  },
+  {
+    "id": "tc_006",
+    "user_input": "Should this candidate fit a senior iOS job?",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "Senior iOS Engineer. Requirements: 8+ years Swift, iOS architecture, performance tuning.",
+    "resume": "New grad candidate. Skills: Python backend, SQL, OpenAI API."
+  },
+  {
+    "id": "tc_007",
+    "user_input": "Please compare this resume with the ML role and rate from 0-10.",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "ML Engineer. Requirements: Python, PyTorch, model deployment, Kubernetes.",
+    "resume": "David Lin. Skills: Python, PyTorch, TensorFlow, Docker, Kubernetes. Experience: 4 years ML systems."
+  },
+  {
+    "id": "tc_008",
+    "user_input": "Evaluate if this profile is suitable for full-stack developer.",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "Full-stack Developer. Requirements: React, Node.js, PostgreSQL, CI/CD.",
+    "resume": "Nora Li. Skills: React, Node.js, Express, PostgreSQL, GitHub Actions."
+  },
+  {
+    "id": "tc_009",
+    "user_input": "Analyze fit for this security engineering posting.",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "Security Engineer. Requirements: threat modeling, IAM, cloud security, incident response.",
+    "resume": "Candidate with backend API focus, Python, SQL, distributed systems, no direct security work."
+  },
+  {
+    "id": "tc_010",
+    "user_input": "Can you evaluate this resume against the role and return recommendation?",
+    "expected_route": "evaluate_job_fit",
+    "job_description": "Backend Platform Engineer. Requirements: Python, microservices, gRPC, observability, Kubernetes.",
+    "resume": "Emily Zhou. Skills: Python, gRPC, microservices, Prometheus, Kubernetes. Experience: 3 years."
+  }
+]
