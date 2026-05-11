@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What programming languages does the candidate know?",
+    "answer": "The candidate knows Java (Expert), Python, and SQL.",
+    "score": 5,
+    "reason": "The answer correctly lists all the programming languages the candidate knows, including the expected keywords: Python, Java, and SQL. Additionally, it provides an expertise level for Java, which adds value to the response."
+  },
+  {
+    "question": "What distributed systems experience does the candidate have?",
+    "answer": "The candidate has a strong foundation in backend systems and distributed architecture. They have experience in building scalable gRPC-based systems, which are commonly used in distributed systems for efficient communication between services. Additionally, their coursework includes \"Distributed Multiprocessor Operating Systems\" and \"Data Processing at Scale,\" which further indicates their knowledge and experience in distributed systems.",
+    "score": 5,
+    "reason": "The answer provides a comprehensive overview of the candidate's experience with distributed systems. It mentions specific technologies (gRPC) and relevant coursework, which demonstrates both practical and theoretical knowledge in the field. The expected keywords are present, and the response aligns well with the question asked."
+  },
+  {
+    "question": "What is the candidate's GPA?",
+    "answer": "The candidate's GPA is 4.00/4.00.",
+    "score": 5,
+    "reason": "The answer correctly states the candidate's GPA as 4.00/4.00, which aligns with the expected keyword of 4.0. The information is complete and accurate."
+  },
+  {
+    "question": "What AI tools has the candidate used?",
+    "answer": "The candidate has used LLM-based tools such as Claude and Codex for AI-assisted development, as well as Cursor and Agentic workflows to accelerate the software development lifecycle (SDLC).",
+    "score": 5,
+    "reason": "The answer accurately lists the AI tools used by the candidate, specifically mentioning LLM-based tools like Claude and Codex, as well as Cursor and Agentic workflows. This aligns well with the expected keywords and provides a comprehensive overview of the tools utilized for AI-assisted development and SDLC acceleration."
+  },
+  {
+    "question": "What is the candidate's highest degree?",
+    "answer": "The candidate's highest degree is a Master of Science (M.S.) in Computer Science, which they are expected to complete in Spring 2027 at Arizona State University.",
+    "score": 5,
+    "reason": "The answer correctly identifies the candidate's highest degree as a Master of Science in Computer Science and provides additional context about the expected completion date and institution. It includes the expected keywords 'Computer Science' and 'Master.'"
+  }
+]
