@@ -1,0 +1,33 @@
+Jason Lin
+Kirkland, WA | U.S. Permanent Resident
+CS graduate student with a strong foundation in backend systems, distributed architecture, and AI-agentic software development. Experienced in building scalable gRPC-based systems and leveraging LLM-based tools (Claude, Cursor, Agentic workflows) to accelerate the SDLC. 4.0 GPA with a focus on high-performance cloud computing and AI-driven innovation.
+EDUCATION
+Arizona State University, Ira A. Fulton Schools of Engineering
+M.S. in Computer Science, Expected Spring 2027 GPA: 4.00/4.00
+Relevant Coursework: Distributed Multiprocessor Operating Systems, Data Processing at Scale, Statistical Machine Learning, Engineering Blockchain Applications, Data Visualization
+Tiangong University/Zhejiang Gongshang University/China M.Eng.& B.Eng. in Environmental Engineering,
+TECHNICAL SKILLS
+Languages: Java(Expert), Python, SQL.
+Technologies: gRPC, Protocol Buffers, Hyperledger Fabric, REST APIs.
+Databases: SQL, NoSQL (UnQLite), PostgreSQL.
+AI & Agents: LLM-Assisted Development(Claude, Codex), Prompt Engineering, Autonomous Agent Workflows, Code Generation & Review. Tools & Concepts: Distributed Systems, Backend Architecture, Git, Linux, Maven, Data Processing at Scale.
+PROJECTS
+AI Job Search Automation System | Python, PostgreSQL, LLM Tools
+• Designed and implemented an autonomous AI agent system using LLMs for multi-step reasoning and automated decision-making in job application workflows.
+• Developed a scalable backend to manage high-frequency data retrieval and processing, ensuring real-time updates and persistence in PostgreSQL.
+• Optimized development speed through AI-assisted coding and automated unit test generation.
+Distributed Banking System | Python, gRPC, Protocol Buffers
+GitHub: github.com/wyxlin/grpc-distributed-banking-system
+• Architected a high-concurrency distributed system utilizing gRPC for efficient inter-branch communication and state synchronization.
+• Implemented logical clock synchronization (Lamport/Vector) to ensure transaction ordering and data consistency across multiple server nodes.
+• Designed robust error-handling and retry logic to maintain system availability during network partitions.
+Blockchain Supply Chain Platform | Hyperledger Fabric, Blockchain
+GitHub: github.com/wyxlin/fabric-supply-chain-smart-contract
+• Developed a blockchain-based supply chain application to manage asset lifecycle events and transaction records on a distributed ledger. • Implemented smart contract logic for asset creation, transfer, and status updates to improve traceability across workflows.
+• Refined the project into a more complete portfolio application with improved structure and documentation.
+NoSQL Geospatial Search System | Python, UnQLite
+GitHub: github.com/wyxlin/nosql-business-search
+•Built a NoSQL business search system supporting city-based lookup and location-aware filtering over structured business data. •Designed query logic combining category filters and geospatial distance calculations for location-based search.
+•Packaged the project into a reproducible Python workflow with result export and documentation.
+ADDITIONAL
+LeetCode: Solved 380+ problems across data structures and algorithms Languages: English and Mandarin Chinese
